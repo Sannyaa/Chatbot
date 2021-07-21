@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- CSS stylesheet
+    <link rel="stylesheet" href="css/styles.css"> -->
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/89efaed827.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #222;
+            width: -webkit-fill-available;
+        }
+        
+        df-messenger {
+            --df-messenger-bot-message: #00838F;
+            --df-messenger-button-titlebar-color: white;
+            --df-messenger-chat-background-color: #fafafa;
+            --df-messenger-font-color: white;
+            --df-messenger-send-icon: #002c42;
+            --df-messenger-user-message: #002c42;
+            --df-messenger-input-box-color: #B3CDD1;
+            --df-messenger-input-placeholder-font-color: #424242;
+            --df-messenger-button-titlebar-font-color: black;
+            --df-messenger-minimized-chat-close-icon-color: black;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .white-section {
+            background: white;
+        }
+        /* Navigation */
+        
+        .navbar {
+            padding: 0.8rem;
+        }
+        
+        .navbar-nav li {
+            padding-right: 20px;
+        }
+        
+        .nav-link {
+            font-size: 1.1em !important;
+        }
+        /* Carousel */
+        
+        #intro .carousel-item {
+            height: 40rem;
+            background: #222;
+            color: white;
+            position: relative;
+        }
+        
+        #intro h1 {
+            margin: 20px;
+            font-weight: 400;
+        }
+        
+        #intro .container {
+            position: absolute;
+            bottom: 8%;
+            left: 0;
+            right: 0;
+            padding: 0 30px 50px;
+            text-align: center;
+        }
+        
+        .overlay-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .logo-top {
+            width: 25%;
+        }
+        
+        .logo {
+            width: 25%;
+        }
+        
+        #intro p {
+            font-size: 1.1rem;
+        }
+        
+        .member-button {
+            margin-top: 4%;
+        }
+        /* FAQs */
+        
+        #faqs img {
+            width: 100%;
+        }
+        /* Testimonials */
+        
+        #testimonials {
+            width: 100%;
+            background: cadetblue;
+            margin-top: 5%;
+            padding-bottom: 5%;
+        }
+        
+        #testimonials h1 {
+            margin: 2% 0 0;
+            padding: 6% 4% 3%;
+            color: #fff;
+            font-size: 2.5rem;
+        }
+        
+        .container-fluid {
+            padding: 3% 10%;
+        }
+        
+        #testimonials p {
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+        
+        em {
+            font-size: 1.2rem;
+        }
+        
+        #testimonials .card-body {
+            background: #eaf6fa;
+            padding: 0.5rem;
+            min-height: 0.5px;
+            border-radius: 15px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        #testimonials div.card {
+            background: none;
+            text-decoration: none;
+            border: none;
+        }
+        
+        .card-body p {
+            font-size: 1rem;
+            padding: 1rem 1.2rem;
+        }
+        
+        .card img {
+            width: 8%;
+            border-radius: 100%;
+            margin: 20px;
+        }
+        /* Payment */
+        
+        #payment {
+            text-align: center;
+        }
+        
+        .text-align {
+            text-align: left;
+        }
+        
+        .text-align-right {
+            text-align: end;
+        }
+        
+        .container-payment {
+            padding: 3% 4%;
+        }
+        
+        .member-heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        #payment img {
+            width: 500px;
+        }
+        
+        .pay-button {
+            padding: 15px 20px;
+            font-size: 28px;
+            font-weight: 500;
+            background-color: black;
+            margin-bottom: 20px;
+        }
+        
+        .feature-heading {
+            line-height: 1;
+            letter-spacing: -.05rem;
+            font-size: 4rem;
+            margin-top: 30px;
+            padding-bottom: 10px;
+        }
+        
+        .feature-text {
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -.05rem;
+            padding-bottom: 10px;
+        }
+        
+        .box-margin {
+            padding: 6% 5% 1%;
+        }
+        /* Contact */
+        
+        #contact {
+            text-align: left;
+            padding-top: 1.2%;
+        }
+        
+        .footer-icon {
+            margin: 5% 3%;
+            size: 100px;
+            text-decoration: none;
+            color: black;
+        }
+        
+        .footer-icon:hover {
+            text-decoration: none;
+            color: cadetblue;
+        }
+        
+        .mail {
+            text-decoration: none;
+        }
+        
+        .mail:hover {
+            text-decoration: under;
+            color: cadetblue;
+        }
+        
+        .contact-text {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 1;
+            letter-spacing: -.05rem;
+            padding-bottom: 10px;
+        }
+        
+        .num {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .text1 {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .text2 {
+            margin-top: 0;
+            padding-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .social-text {
+            font-size: 1.2rem;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+        
+        .border {
+            border: 1px solid black !important;
+            padding: 1rem;
+        }
+        /*Media Query Breakpoints*/
+        
+        @media (max-width: 1028px) {
+            .feature-heading {
+                line-height: 1;
+                letter-spacing: -.05rem;
+                font-size: 2rem;
+                margin-top: 30px;
+                padding-bottom: 10px;
+            }
+            .feature-text {
+                font-size: 1.3rem;
+                font-weight: 300;
+                line-height: 1.2;
+                letter-spacing: -.05rem;
+                padding-bottom: 10px;
+            }
+            .text-align {
+                text-align: center;
+            }
+            #payment img {
+                width: 600px;
+            }
+            .box-margin {
+                margin: 7% 0;
+            }
+            #testimonials .card-body {
+                margin: 1.2rem auto;
+            }
+            #contact {
+                margin: 25px auto;
+            }
+            .logo-top {
+                width: 60%;
+            }
+            #testimonials p {
+                font-weight: 400;
+                font-size: 0.9rem;
+                padding: auto 0;
+            }
+            .card img {
+                width: 20%;
+                border-radius: 100%;
+                margin: 0 10px 10px 0;
+            }
+            em {
+                font-size: 1rem;
+            }
+            .box-margin {
+                padding: 5% 1% 1%;
+            }
+        }
+    </style>
+
+
+    <title>Membership Drive 2021</title>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <section id="Navigation">
+        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+
+            <a class="navbar-brand " href="">IAESTE LC MANIPAL</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#intro">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faqs">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#payment">JOIN NOW</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </section>
+
+
+    <!-- Introduction -->
+
+    <section id="intro">
+
+        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="overlay-image" style="background-image: url('./assets/images/MD2021/Thailand.jpg');"></div>
+                    <div class="container">
+                        <img src="./assets/images/MD2021/iaestewhite.png" alt="" class="logo-top">
+                        <h1>WORK. EXPERIENCE. DISCOVER.</h1>
+                        <a href="#payment" class="btn btn-light btn-lg member-button" type="button">
+                            Become a member
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image" style="background-image: url('./assets/images/MD2021/Turkey.jpeg');"></div>
+                    <div class="container">
+                        <p>IAESTE India LC Manipal, the flagship student exchange program of Manipal University, is a fully supported student run organization by Manipal University and its constituent colleges. It has been instrumental in providing a plethora
+                            of opportunities for students to enhance their careers by pursuing technical internships abroad since its inception in 2005.</p>
+                        <a href="#payment" class="btn btn-light btn-lg member-button" type="button">
+                            Become a member
+                         </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="overlay-image" style="background-image: url('./assets/images/MD2021/Turkey2.jpeg');"></div>
+                    <div class="container">
+                        <h1>Taking Manipal to the world,<br> bringing the world to Manipal.</h1>
+                        <a href="#payment" class="btn btn-light btn-lg member-button" type="button">
+                            Become a member
+                         </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQs -->
+
+    <section id="faqs">
+        <img src="./assets/images/MD2021/faqs.png" alt="">
+    </section>
+
+
+    <!-- Payment -->
+
+    <section id="payment" class="white-section">
+        <div class="container-payment">
+            <div class="row box-margin">
+                <div class="col-lg-6 text-align">
+                    <h2 class="feature-heading">Get your membership now</h2>
+                    <p class="feature-text"> Become a member by clicking below or scan the QR code.</p>
+                    <a href="https://m.p-y.tm/iaeste"> <button type="button" class="btn btn-dark btn-lg pay-button">Pay now</button></a>
+                </div>
+                <div class="col-lg-6 text-align-right">
+                    <img src="./assets/images/MD2021/QRcode.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials -->
+
+    <section id="testimonials">
+
+        <h1 class="testimonials-title">What our members say</h1>
+        <div id="testimonial-carousel" class="carousel slide" data-ride="carousel" id="mycarousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active container-fluid">
+                    <div class="text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>I worked at the company, Future Generation System, which is a small company involved in Data processing. My work involved developing a chat client to be used by the employees of the company. It was an amazing experience
+                                    to work on a project from scratch to completion. My co-workers were very welcoming and were ready to help me out whenever I had an issue. The members of the receiving LC were very warm and I got the opportunity to make
+                                    a lot of friends with the other interns that LC Yildiz was hosting.
+                                </p>
+                                <img src="./assets/images/MD2021/Ayush.jpg" alt="">
+                                <em>Ayush, Turkey</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item container-fluid">
+                    <div class="text-center">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <p>I did my internship in my final year, just before I joined a corporate job. I couldn’t have asked for a better experience. I got to meet lots of people from all across the globe. From these people, I got to know a lot about
+                                    their culture, their perception on various things and even cuisines! Moreover, living in a foreign land and truly experiencing the lifestyle is so much better than just travelling there for a few days. I thank IAESTE
+                                    for giving me this opportunity which I will embrace all my life.
+                                </p>
+                                <img src="./assets/images/MD2021/Madhav.jpg" alt="">
+                                <em>Madhav, Poland</em>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="carousel-item container-fluid">
+                    <div class="text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>I was interning as a computer science engineer with Acoustics and Vibrations Research Group at Vrije Universiteit Brussel, Belgium. Brussels is the central city of Belgium. Hence it was quite easy for me to travel to other
+                                    countries like Netherlands (Amsterdam), France (Paris), Germany(Cologne), Switzerland (Zurich, Lucerne, and Rhine fall) and other towns of Belgium like Ghent and Brugge in the weekends. I'd like to thank IAESTE LC Manipal
+                                    for giving me this wonderful opportunity and for all the help for making my internship experience successful.
+                                </p>
+                                <img src="./assets/images/MD2021/Yashika.jpg" alt="">
+                                <em>Yashika, Belgium</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item container-fluid">
+                    <div class="text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>My IAESTE Internship was priceless , the main benefits came down to three elements. First, feeling incredibly grateful and proud to work with very respectful and sweet Japanese students and professors was a gift in itself.
+                                    Second, visiting the wonders of Japan, it is just impossible not to be in awe with all the beauty and culture the country has to offer. Finally, meeting intelligent, creative and well-rounded fellow interns from all
+                                    over the United States, Europe and South America.
+                                </p>
+                                <img src="./assets/images/MD2021/Tirthankar.jpg" alt="">
+                                <em>Tirthankar, Japan</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item container-fluid">
+                    <div class="text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>I interned at Fraunhofer Institute for Digital Media Technology in Ilmenau, Germany. The main focus of the institute is on Audio-Visual data and I'm working with the Audio Forensics group! During this internship, I learnt
+                                    a lot along the way! My supervisor and the whole team were extremely helpful and welcoming! They’ve also often, very kindly, offered to translate the German food menu in the food court during lunch for me and invite
+                                    me to department barbecues! I was really fortunate to have experienced their college fest in the first week of my internship.
+                                </p>
+                                <img src="./assets/images/MD2021/Shreya.jpg" alt="">
+                                <em>Shreya, Germany</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item container-fluid">
+                    <div class="text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>I interned at Medical University of Lodz, Poland. I worked with a very understanding and supportive supervisor. This was my first experience in Research and it taught me to be calm, patient and passionate about my research
+                                    work. I made a lot of friends from different countries. During the weekends, I visited different cities of Poland like Warsaw and Krakow, and was amazed to know the long and rich history of Poland. Besides visiting
+                                    Polish cities, I also travelled to Vienna during my last weekend which gave me great insight into European culture. My IAESTE Internship was honestly, the best thing I have ever done!
+                                </p>
+                                <img src="./assets/images/MD2021/Apurvi.jpg" alt="">
+                                <em>Apurvi, Poland</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <footer id="contact">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 text-align">
+                    <p class="contact-text">For any further information, feel free to contact us.</p>
+                    <p>You can mail us your queries at <a href="mailto:queries@iaeste.in" class="mail"> queries@iaeste.in</a><br>or get in touch with us directly.</p>
+                    <p class="num text1">Ina Goel: <a href="tel:6366386883" class="mail">+91 63663 86883</a></p>
+                    <p class="num text2">Navya Kriti: <a href="tel:7065566045" class="mail">+91 70655 66045</a></p>
+                </div>
+                <div class="col-md-6 text-align-right">
+                    <div class="text-center border">
+                        <img src="./assets/images/MD2021/iaesteblack.png" alt="" class="logo">
+                        <p class="social-text">Follow us for more information</p>
+
+                        <a href="https://in.linkedin.com/company/iaeste-india-lc-manipal" class="footer-icon fab fa-linkedin fa-2x"></a>
+                        <a href="https://www.facebook.com/IAESTELCManipal" class="footer-icon fab fa-facebook-f fa-2x"></a>
+                        <a href="http://instagram.com/iaeste.lcmanipal" class="footer-icon fab fa-instagram fa-2x"></a>
+                        <a href="http://manipal.iaeste.in/" class="footer-icon fas fa-globe fa-2x"></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger chat-icon="https:&#x2F;&#x2F;iaeste.uni-rostock.de&#x2F;storages&#x2F;uni-rostock&#x2F;Andere&#x2F;IAESTE&#x2F;iaeste-logo_2.jpg" intent="WELCOME" chat-title="Help-Desk" agent-id="da534c86-abda-4b87-9373-1487ccc8bc50" language-code="en"></df-messenger>
+
+</body>
+
+</html>
